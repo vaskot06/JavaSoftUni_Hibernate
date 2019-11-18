@@ -19,6 +19,7 @@ public class Sale {
     @ManyToOne(targetEntity = Product.class,
     fetch = FetchType.LAZY,
     cascade = CascadeType.ALL)
+    @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;
 
 
@@ -26,6 +27,7 @@ public class Sale {
     @ManyToOne(targetEntity = Customer.class,
             fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer customer;
 
 
@@ -33,7 +35,7 @@ public class Sale {
     @ManyToOne(targetEntity = StoreLocation.class,
             fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
-   @JoinColumn(name = "store_location_id", nullable = false)
+   @JoinColumn(name = "store_location_id", referencedColumnName = "id")
     private StoreLocation storeLocation;
 
 
